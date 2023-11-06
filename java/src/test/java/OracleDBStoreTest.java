@@ -26,9 +26,9 @@
  */
 
 import oracle.jdbc.pool.OracleDataSource;
-import org.junit.Before;
-import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 import org.testcontainers.containers.OracleContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
@@ -38,7 +38,7 @@ import org.testcontainers.utility.MountableFile;
 @Testcontainers
 public class OracleDBStoreTest {
 
-    private OracleDBStore store;
+    private static OracleDBStore store;
 
     @Container
     private static final OracleContainer oracle =
@@ -51,11 +51,8 @@ public class OracleDBStoreTest {
                             "/container-entrypoint-initdb.d/"
                     );
 
-    @Before
-    public void setup() throws Exception {
-
-        oracle.start();
-
+    @BeforeAll
+    public static void setup() throws Exception {
         // Setup OracleDBStore
         var ods = new OracleDataSource();
         ods.setURL(oracle.getJdbcUrl());
