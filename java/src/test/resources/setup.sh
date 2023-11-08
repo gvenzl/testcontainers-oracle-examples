@@ -29,6 +29,6 @@
 curl -L -O https://github.com/gvenzl/sample-data/archive/refs/heads/main.zip
 unzip main.zip
 cd sample-data-main/countries-cities-currencies/ || exit 1
-sqlplus "${APP_USER}"/"${APP_USER_PASSWORD}"@localhost/xepdb1 <<EOF
+sqlplus "${APP_USER}"/"${APP_USER_PASSWORD}"@localhost/freepdb1 <<EOF
   @install.sql
 EOF

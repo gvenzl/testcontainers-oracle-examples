@@ -29,9 +29,9 @@ import oracle.jdbc.pool.OracleDataSource;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import org.testcontainers.containers.OracleContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
+import org.testcontainers.oracle.OracleContainer;
 import org.testcontainers.utility.DockerImageName;
 import org.testcontainers.utility.MountableFile;
 
@@ -43,7 +43,7 @@ public class OracleDBStoreTest {
     @Container
     private static final OracleContainer oracle =
             new OracleContainer(
-                    DockerImageName.parse("gvenzl/oracle-xe:slim-faststart"))
+                    DockerImageName.parse("gvenzl/oracle-free:slim-faststart"))
                     .withUsername("testUser")
                     .withPassword("superSecure")
                     .withCopyFileToContainer(
