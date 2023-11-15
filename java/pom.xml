@@ -78,11 +78,6 @@
             <version>1.19.2</version>
             <scope>test</scope>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.github.testcontainers.testcontainers-java</groupId>-->
-<!--            <artifactId>oracle-free</artifactId>-->
-<!--            <version>666ec53e87</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
